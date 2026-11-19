@@ -61,12 +61,12 @@ DSH（DeepSeek Harness）的**模型 token 用量统计**插件。只记用量�
     }
   },
   "dependencies": {
-    "dsh-usage-meter": "link:D:/tools/AI/DSH-plugins/dsh-usage-meter"
+    "dsh-usage-meter": "link:<插件目录>"
   }
 }
 ```
 
-2. 在 profile 目录跑一次 `pnpm install`（或 `dsh plugin --profile <名字> add D:/tools/AI/DSH-plugins/dsh-usage-meter`）。
+2. 在 profile 目录跑一次 `pnpm install`（或 `dsh plugin --profile <名字> add <插件目录>`）。
 3. **重启 DSH**（首次加进 profile 必须重启；只有 client bundle 变化会热更新）。
 4. 打开 设置 → **用量统计**。
 
@@ -84,7 +84,7 @@ dsh plugin --profile desktop enable usage-meter
 ### 方式二：dsh plugin 转发
 
 ```sh
-dsh plugin --profile desktop add D:/tools/AI/DSH-plugins/dsh-usage-meter
+dsh plugin --profile desktop add <插件目录>
 ```
 
 随后用 `dsh --profile desktop --dump-config` 确认出现 `id: usage-meter` 这一层。

@@ -1,0 +1,27 @@
+# 依赖
+node_modules/
+
+# 历史备份与临时文件
+.bak/
+tmp/
+*.bak-*
+*.bak.*
+*.orig
+*.rej
+
+# 本地用量账本 —— 包含你的真实调用记录，不要进仓库
+usage-meter/
+usage.jsonl
+*.jsonl
+health.json
+
+# 本地凭据 —— 永远不要进仓库
+.env
+.env.*
+!.env.example
+*.log
+
+# 系统垃圾
+.DS_Store
+Thumbs.db
+desktop.ini

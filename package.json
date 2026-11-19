@@ -1,0 +1,47 @@
+{
+  "name": "dsh-usage-meter",
+  "version": "0.1.0",
+  "description": "DSH 模型 token 用量统计插件（不计费）：按渠道(provider) × 模型 × 日期记录每次模型调用的 token 用量，附设置页「用量统计」与 usage_stats 工具。",
+  "type": "module",
+  "main": "lib/plugin.js",
+  "exports": {
+    ".": "./lib/plugin.js",
+    "./client": "./lib/client.js",
+    "./cordis.patch.yml": "./cordis.patch.yml",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "lib",
+    "cordis.patch.yml",
+    "README.md"
+  ],
+  "keywords": [
+    "dsh",
+    "dsh-plugin",
+    "deepseek-harness",
+    "usage",
+    "tokens",
+    "statistics",
+    "provider",
+    "ledger"
+  ],
+  "license": "MIT",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "check": "node --check lib/plugin.js && node --check lib/host.js && node --check lib/store.js && node --check lib/backfill.js && node --check lib/client.js"
+  },
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "platform": "web",
+      "inject": [
+        "@deepseek-ai/dsh-client-locale",
+        "@deepseek-ai/dsh-client-ui-settings"
+      ]
+    }
+  }
+}
